@@ -1,6 +1,6 @@
 {
   "name": "@naxmefy/env",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "env vars util",
   "main": "lib/index.js",
   "repository": {
