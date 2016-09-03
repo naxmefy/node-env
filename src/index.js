@@ -4,6 +4,6 @@
  * @param {*} [defaultValue] A default value that will be returned if env var is undefined
  * @returns {*}
  */
-export default function env (envVarString, defaultValue) {
+export default function (envVarString, defaultValue) {
   return process.env[envVarString] || defaultValue
 }
