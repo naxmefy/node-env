@@ -2,5 +2,4 @@
 --reporter spec
 --recursive
 --colors
---compilers js:babel-register
 --require should

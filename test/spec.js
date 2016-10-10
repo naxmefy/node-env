@@ -1,5 +1,5 @@
-import should from 'should'
-import env from '../src'
+var should = require('should')
+var env = require('..')
 
 describe('Utils: env', function () {
   it('should return env if defined', function () {
@@ -12,4 +12,3 @@ describe('Utils: env', function () {
     env('ANOTHER_TEST_ENV', 2).should.be.eql(2)
   })
 })
-
