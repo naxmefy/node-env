@@ -14,7 +14,6 @@ $ npm install --save @naxmefy/env
 ## Usage
 
 ```JavaScript
-import env from '@naxmefy/env'
-
-const nodeEnv = env('NODE_ENV', 'development')
+var env = require('@naxmefy/env')
+var nodeEnv = env('NODE_ENV', 'development')
 ```
