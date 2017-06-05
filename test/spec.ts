@@ -1,5 +1,5 @@
 import * as assert from 'assert'
-import env from '../src'
+import env, {glob} from '../src'
 
 describe('Utils: env', () => {
   it('should return env if defined', () => {
@@ -13,5 +13,16 @@ describe('Utils: env', () => {
 
   it('should return default value if env is not defined', () => {
     assert.equal(env('ANOTHER_TEST_ENV', 2), 2)
+  })
+
+  describe('method glob', () => {
+    it('should return all matching env vars', () => {
+      process.env.ENV_TEST_ENV_1 = 1
+      process.env.ENV_TEST_ENV_2 = 2
+
+      const envVars = glob('ENV_TEST_ENV_*')
+      assert.equal(envVars.ENV_TEST_ENV_1, '1')
+      assert.equal(envVars.ENV_TEST_ENV_2, '2')
+    })
   })
 })
