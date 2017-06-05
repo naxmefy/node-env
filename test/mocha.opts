@@ -1,5 +1,3 @@
---ui bdd
---reporter spec
 --recursive
 --colors
---require should
+--compilers ts:ts-node/register
