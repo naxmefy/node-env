@@ -16,9 +16,9 @@ $ npm install --save @naxmefy/env
 
 ## Usage
 
-```JavaScript
-var env = require('@naxmefy/env')
-var nodeEnv = env('NODE_ENV', 'development')
+```TypeScript
+import env from '@naxmefy/env'
+const NodeEnv: string = env('NODE_ENV', 'development')
 ```
 
 ## Support for Node.js <= 4
