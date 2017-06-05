@@ -20,3 +20,7 @@ $ npm install --save @naxmefy/env
 var env = require('@naxmefy/env')
 var nodeEnv = env('NODE_ENV', 'development')
 ```
+
+## Support for Node.js <= 4
+
+Use Versions <= 2.x.x
