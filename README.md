@@ -21,6 +21,25 @@ import env from '@naxmefy/env'
 const NodeEnv: string = env('NODE_ENV', 'development')
 ```
 
+### glob method
+
+```TypeScript
+import {glob} from '@naxmefy/env'
+
+// e.g.:
+interface IDBVars {
+  DB_URL?: string
+  DB_USER?: string
+}
+
+// load vars
+const dbVars = glob('DB_*') as IDBVars
+
+// e.g.:
+console.log(dbVars.DB_URL)
+console.log(dbVars.DB_USER)
+```
+
 ## Support for Node.js <= 4
 
 Use Versions <= 2.x.x
