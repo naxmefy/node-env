@@ -1,4 +1,5 @@
 import globToRegexp = require('glob-to-regexp')
+import isfunction = require('lodash.isfunction')
 
 /**
  * A utility to get multiple env vars for matching env var string.
@@ -19,12 +20,18 @@ export function glob (envVarString: string): { [key: string]: string | any } {
 
 /**
  * A utility to get an env var or if undefined the default value if given.
+ * An optional converter function can be passed to convert the returned value.
  *
  * @export default
  * @param {String} envVarString The string of the env var to fetch
  * @param {*} [defaultValue] A default value that will be returned if env var is undefined
+ * @param {Function} [converter] A optional converter function to convert the returned value
  * @returns {*}
  */
-export default function (envVarString: string, defaultValue?: any): any {
-  return process.env[envVarString] || defaultValue
+export default function (envVarString: string, defaultValue?: any, converter?: Function): any {
+  let value = process.env[envVarString] || defaultValue
+  if (converter && isfunction(converter)) {
+    value = converter.apply(null, [value])
+  }
+  return value
 }
