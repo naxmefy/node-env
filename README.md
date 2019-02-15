@@ -19,6 +19,8 @@ $ npm install --save @naxmefy/env
 ```TypeScript
 import env from '@naxmefy/env'
 const NodeEnv: string = env('NODE_ENV', 'development')
+const aNumber: number = env('A_NUMBER', '10', Number)
+const hello: string = env('USERNAME', 'John', v => `Hello ${v}!`)
 ```
 
 ### glob method
@@ -42,4 +44,8 @@ console.log(dbVars.DB_USER)
 
 ## Support for Node.js <= 4
 
-Use Versions <= 2.x.x
+Use Versions 1.x.x
+
+## Support for Node.js 5.x
+
+Use Versions 2.x.x
